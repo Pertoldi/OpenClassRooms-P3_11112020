@@ -45,6 +45,9 @@
 .fonctionnement {
     display: flex;
     flex-direction: column;
+    $margesPlus10 : $marges-global + 10px;
+    margin: 0 $marges-global 0 $margesPlus10;
+
     &__titre {
         padding: 25px 0 30px 0;
     }
@@ -52,7 +55,33 @@
     &__etape {
         display: flex;
         justify-content: flex-start;
+        align-items: center;
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+        background-color: $color-grey;
+        height: 65px;
+        border-radius: 20px;
+        box-shadow: 0px 3px 3px darken($color-grey, 10%);
+
+        &--numero {
+            position: absolute;
+            left: 17px;
+            height: 20px;
+            width: 20px;
+            background-color: $color-primaire;
+            border-radius: 15px;
+            text-align: center;
+            vertical-align: bottom;
+            color: white;
+            font-size: .8em;
+        }
+        &--icon {
+            width: 20px;
+            margin: 0 20px 0 30px;
+            color: darken($color-grey, 50%);
+        }
+        &--txt {
+            font-weight: 600;
+        }
     }
 }
