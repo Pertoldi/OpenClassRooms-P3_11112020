@@ -38,6 +38,7 @@
             font-weight: 600;
             border-radius: 25px;
             background: linear-gradient(175deg, $color-secondaire, $color-primaire);
+            cursor: pointer;
         }
     }
 }
@@ -46,7 +47,7 @@
     display: flex;
     flex-direction: column;
     $margesPlus10 : $marges-global + 10px;
-    margin: 0 $marges-global 0 $margesPlus10;
+    margin: 0 $marges-global 30px $margesPlus10;
 
     &__titre {
         padding: 25px 0 30px 0;
@@ -62,6 +63,7 @@
         height: 65px;
         border-radius: 20px;
         box-shadow: 0px 3px 3px darken($color-grey, 10%);
+        cursor: pointer;
 
         &--numero {
             position: absolute;
@@ -71,7 +73,7 @@
             background-color: $color-primaire;
             border-radius: 15px;
             text-align: center;
-            vertical-align: bottom;
+            vertical-align: text-bottom;
             color: white;
             font-size: .8em;
         }
