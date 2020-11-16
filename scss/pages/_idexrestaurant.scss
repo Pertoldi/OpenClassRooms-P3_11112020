@@ -20,7 +20,19 @@
     border-radius: 15px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 3px darken($color-grey, 10%);
+    position: relative;
 
+    &__new {
+        display: block;
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        z-index: 99;
+        padding: 2% 4% 2%;
+        background-color: $color-terciaire;
+        color: darken($color-terciaire,50%);
+        font-size: 0.9em;
+    }
 
     &__img {
         width: 100%;
@@ -30,7 +42,7 @@
     }
 
     &__txt {
-        margin: 10px 0 -10px 10px;
+        margin: 10px 0 10px 10px;
 
         &--span {
             display: block;
@@ -41,9 +53,9 @@
     &__icon {
         font-size: 1.4em;
         font-weight: 300;
-        position: relative;
+        position: absolute;
         left: 85%;
-        bottom: 35px;
+        bottom: 25px;
     }
 }
 
