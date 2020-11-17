@@ -1,0 +1,19 @@
+footer {
+    padding-top: 20px;
+    background-color: darken($color-grey, 75%);
+}
+
+$marge-footer: $marges-global + 5px;
+
+h4{
+    margin: 0 0 15px $marge-footer;
+}
+
+
+li {
+    padding: 0 0 10px $marge-footer;
+    i {
+        width: 20px;
+        margin-right: 3px;
+    }
+}

@@ -1,4 +1,4 @@
-h1 {
+h1, .h1 {
   font-family: 'Shrikhand', cursive;
   font-size: 2em;
 }
@@ -14,8 +14,30 @@ h3 {
   font-weight: 600;
 }
 
+h4 {
+  font-family: 'Shrikhand', cursive;
+  color: #FFF;
+  font-size: 1.1em;
+}
+
 span {
   font-family: 'roboto', sans-serif;
+}
+
+li {
+  font-family: 'roboto', sans-serif;
+  color: #FFF;
+}
+
+.btn {
+  border-style: none;
+  width: 200px;
+  height: 40px;
+  color: white;
+  font-weight: 600;
+  border-radius: 25px;
+  background: linear-gradient(175deg, #FF79DA, #9356DC);
+  cursor: pointer;
 }
 
 header {
@@ -32,6 +54,147 @@ header {
   position: absolute;
   top: 25px;
   left: 15px;
+}
+
+.img-carte {
+  width: 100%;
+  height: 270px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.carte {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  top: -45px;
+  width: 100%;
+  border-radius: 40px 40px 0 0;
+  background-color: #F2F2F2;
+  z-index: 99;
+  padding-bottom: 30px;
+}
+
+.carte__titre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 35px 15px 0 15px;
+}
+
+.carte__titre--icon {
+  font-size: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.carte__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 25px 15px 0 15px;
+}
+
+.carte__titre2 {
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+
+.carte__titre2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 40px;
+  background-color: #99E2D0;
+  margin-top: 5px;
+}
+
+.carte__cards {
+  background-color: #FFF;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 10px 8px 10px 8px;
+  -webkit-box-shadow: 0px 3px 3px #d9d9d9;
+          box-shadow: 0px 3px 3px #d9d9d9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+}
+
+.carte__cards--name {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.carte__cards div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-size: .9em;
+}
+
+.carte__cards--price {
+  font-weight: 500;
+}
+
+.carte__btn {
+  margin-top: 40px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.cache-misrere-pos-relative {
+  width: 100%;
+  height: 45px;
+  background-color: #F2F2F2;
+  position: absolute;
+  bottom: -45px;
+}
+
+footer {
+  padding-top: 20px;
+  background-color: #333333;
+}
+
+h4 {
+  margin: 0 0 15px 20px;
+}
+
+li {
+  padding: 0 0 10px 20px;
+}
+
+li i {
+  width: 20px;
+  margin-right: 3px;
 }
 
 .acceuil {
@@ -84,6 +247,7 @@ header {
           align-items: center;
   padding: 40px 15px 40px 15px;
   background-color: #F2F2F2;
+  width: 100%;
 }
 
 .acceuil__reservez--titre {
@@ -94,17 +258,6 @@ header {
   text-align: center;
   font-weight: 300;
   padding: 10px 0 25px 0;
-}
-
-.acceuil__reservez--btn {
-  border-style: none;
-  width: 200px;
-  height: 40px;
-  color: white;
-  font-weight: 600;
-  border-radius: 25px;
-  background: linear-gradient(175deg, #FF79DA, #9356DC);
-  cursor: pointer;
 }
 
 .fonctionnement {
@@ -144,6 +297,15 @@ header {
 
 .fonctionnement__etape--numero {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   left: 17px;
   height: 20px;
   width: 20px;
@@ -174,7 +336,7 @@ header {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #F2F2F2;
-  padding: 0 15px 0 15px;
+  padding: 0 15px 40px 15px;
 }
 
 .restaurants h2 {
@@ -219,6 +381,13 @@ header {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px 15px 0 0;
+  -o-object-position: 50% 100%;
+     object-position: 50% 100%;
+}
+
+.bloc-restaurant__img--2 {
+  -o-object-position: 50% 61%;
+     object-position: 50% 61%;
 }
 
 .bloc-restaurant__txt {
@@ -236,25 +405,5 @@ header {
   position: absolute;
   left: 85%;
   bottom: 25px;
-}
-
-#resto-1 {
-  -o-object-position: 50% 100%;
-     object-position: 50% 100%;
-}
-
-#resto-2 {
-  -o-object-position: 50% 61%;
-     object-position: 50% 61%;
-}
-
-#resto-3 {
-  -o-object-position: 50% 100%;
-     object-position: 50% 100%;
-}
-
-#resto-4 {
-  -o-object-position: 50% 100%;
-     object-position: 50% 100%;
 }
 /*# sourceMappingURL=main.css.map */
