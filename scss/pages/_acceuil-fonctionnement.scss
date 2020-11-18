@@ -1,3 +1,10 @@
+.querie {
+    @media (min-width: $queries) {
+        display: flex;
+    }
+}
+
+
 .acceuil {
     display: flex;
     flex-direction: column;
@@ -14,7 +21,6 @@
             margin-left: 20px;
         }
     }
-
     &__reservez {
         display: flex;
         flex-direction: column;
@@ -31,6 +37,9 @@
             font-weight: 300;
             padding: 10px 0 25px 0;
         }
+    }
+    @media (min-width: $queries) {
+        width:50%;
     }
 }
 
@@ -79,5 +88,9 @@
         &--txt {
             font-weight: 600;
         }
+    }
+
+    @media (min-width: $queries) {
+        width: 50%;
     }
 }

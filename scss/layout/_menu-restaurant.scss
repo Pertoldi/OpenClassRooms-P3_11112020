@@ -19,7 +19,8 @@
         display: flex;
         justify-content: space-between;
         align-content: center;
-        margin: 35px $marges-global 0 $marges-global;
+        padding: 35px $marges-global 0 $marges-global;
+        width: 100%;
 
         &--icon {
             font-size: 1.5em;
