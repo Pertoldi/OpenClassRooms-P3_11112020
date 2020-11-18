@@ -1,3 +1,10 @@
+.querie {
+    @media (min-width: $queries) {
+        display: flex;
+    }
+}
+
+
 .acceuil {
     display: flex;
     flex-direction: column;
@@ -14,7 +21,6 @@
             margin-left: 20px;
         }
     }
-
     &__reservez {
         display: flex;
         flex-direction: column;
@@ -22,6 +28,7 @@
         align-items: center;
         padding: 40px $marges-global 40px $marges-global;
         background-color: $color-grey;
+        width: 100%;
         &--titre {
             text-align: center;
         }
@@ -30,16 +37,9 @@
             font-weight: 300;
             padding: 10px 0 25px 0;
         }
-        &--btn {
-            border-style: none;
-            width: 200px;
-            height: 40px;
-            color: white;
-            font-weight: 600;
-            border-radius: 25px;
-            background: linear-gradient(175deg, $color-secondaire, $color-primaire);
-            cursor: pointer;
-        }
+    }
+    @media (min-width: $queries) {
+        width:50%;
     }
 }
 
@@ -67,6 +67,9 @@
 
         &--numero {
             position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             left: 17px;
             height: 20px;
             width: 20px;
@@ -85,5 +88,9 @@
         &--txt {
             font-weight: 600;
         }
+    }
+
+    @media (min-width: $queries) {
+        width: 50%;
     }
 }
