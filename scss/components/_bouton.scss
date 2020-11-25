@@ -6,5 +6,27 @@
     font-weight: 600;
     border-radius: 25px;
     background: linear-gradient(175deg, $color-secondaire, $color-primaire);
+    box-shadow: 0px 3px 3px darken($color-grey, 10%);
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 25px;
+        background: linear-gradient(175deg, lighten($color-secondaire, 4), lighten($color-primaire, 4));
+        box-shadow: 0px 6px 6px darken($color-grey, 10%);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 200ms;
+    }
 }

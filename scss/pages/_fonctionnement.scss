@@ -1,58 +1,19 @@
-.querie {
-    @media (min-width: $queries) {
-        display: flex;
-    }
-}
-
-
-.acceuil {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &__lieu {
-        width: 100%;
-        height: 40px;
-        background-color: darken($color-grey, 10%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: inset 0px 3px 3px darken($color-grey, 25%);
-        &--txt {
-            margin-left: 20px;
-        }
-    }
-    &__reservez {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 40px $marges-global 40px $marges-global;
-        background-color: $color-grey;
-        width: 100%;
-        &--titre {
-            text-align: center;
-        }
-        &--txt {
-            text-align: center;
-            font-weight: 300;
-            padding: 10px 0 25px 0;
-        }
-    }
-    @media (min-width: $queries) {
-        width:50%;
-    }
-}
-
 .fonctionnement {
     display: flex;
     flex-direction: column;
     $margesPlus10 : $marges-global + 10px;
     margin: 0 $marges-global 30px $margesPlus10;
-
+    @media (min-width: $queries) {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
     &__titre {
         padding: 25px 0 30px 0;
+        @media (min-width: $queries) {
+            width: 100%;
+        }
     }
-
     &__etape {
         display: flex;
         justify-content: flex-start;
@@ -63,14 +24,18 @@
         height: 65px;
         border-radius: 20px;
         box-shadow: 0px 3px 3px darken($color-grey, 10%);
+        z-index: 1;
+        position: relative;
         cursor: pointer;
-
+        @media (min-width: $queries) {
+            width: 31%;
+        }
         &--numero {
             position: absolute;
             display: flex;
             justify-content: center;
             align-items: center;
-            left: 17px;
+            left: -10px;
             height: 20px;
             width: 20px;
             background-color: $color-primaire;
@@ -79,6 +44,9 @@
             vertical-align: text-bottom;
             color: white;
             font-size: .8em;
+            @media (min-width: $queries) {
+                position: relative;
+            }
         }
         &--icon {
             width: 20px;
@@ -87,10 +55,27 @@
         }
         &--txt {
             font-weight: 600;
+            @media (min-width: $queries) {
+                padding-right: 10px;
+            }
         }
-    }
-
-    @media (min-width: $queries) {
-        width: 50%;
+        &:hover {
+            &::after {
+                opacity: 0.2;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            background-color: lighten($color-primaire, 15);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 250ms;
+        }
     }
 }
