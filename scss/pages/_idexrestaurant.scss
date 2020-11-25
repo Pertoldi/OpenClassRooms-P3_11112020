@@ -66,11 +66,31 @@
     }
 
     &__icon {
+        position: absolute;
         font-size: 1.4em;
         font-weight: 300;
-        position: absolute;
         left: 85%;
         bottom: 25px;
+        z-index: 1;
+        transition: opacity 250ms;
+
+        &:hover {
+            opacity: 0;
+            & + .bloc-restaurant__icon--full {
+                    opacity: 1;   
+            }
+         }
+
+        &--full {
+            position: absolute;
+            opacity: 0;
+            font-size: 1.4em;
+            font-weight: 300;
+            left: 85%;
+            bottom: 25px;
+            color: $color-primaire;
+            transition: opacity 250ms;
+        }
     }
 }
 

@@ -1,14 +1,26 @@
 footer {
     padding-top: 20px;
     background-color: darken($color-grey, 75%);
+    @media (min-width: $queries) {
+       display: flex;
+       flex-direction: column;
+    }
+
+    ul {
+        @media (min-width: $queries) {
+            align-self: center;
+        }
+    }
 }
 
 $marge-footer: $marges-global + 5px;
 
 h4{
     margin: 0 0 15px $marge-footer;
+    @media (min-width: $queries) {
+        align-self: center;
+    }
 }
-
 
 li {
     padding: 0 0 10px $marge-footer;

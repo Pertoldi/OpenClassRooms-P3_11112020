@@ -1,8 +1,10 @@
+@import "base/reset";
 @import "utils/variables";
 @import "base/typography";
 @import "components/bouton";
 @import "layout/header";
 @import "layout/menu-restaurant";
 @import "layout/footer";
-@import "pages/acceuil-fonctionnement";
+@import "pages/acceuil";
+@import "pages/fonctionnement";
 @import "pages/idexrestaurant";

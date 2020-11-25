@@ -33,6 +33,10 @@
         display: flex;
         flex-direction: column;
         margin: 25px $marges-global 0 $marges-global;
+        @media (min-width: $queries) {
+            margin: 25px auto 0 auto;
+            width: 900px;
+        }
     }
 
     &__titre2 {
@@ -71,7 +75,6 @@
             font-size: .9em;
         }
 
-
         &--price {
             font-weight: 500;
         }
@@ -81,12 +84,13 @@
         margin-top: 40px;
         align-self: center;
     }
-}
 
-.cache-misrere-pos-relative {
-    width: 100%;
-    height: 45px;
-    background-color: $color-grey;
-    position: absolute;
-    bottom: -45px;
+    &::after {
+        content: "";
+        width: 100%;
+        height: 45px;
+        background-color: $color-grey;
+        position: absolute;
+        bottom: -45px;   
+    }
 }
