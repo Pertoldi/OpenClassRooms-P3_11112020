@@ -17,15 +17,34 @@
 
     &__titre {
         display: flex;
-        justify-content: space-between;
         align-content: center;
         padding: 35px $marges-global 0 $marges-global;
         width: 100%;
+        position: relative;
 
         &--icon {
+            position: absolute;
             font-size: 1.5em;
-            display: flex;
-            align-self: center;
+            right: 40px;
+            top: 46px;
+            z-index: 99;
+
+            &:hover {
+                opacity: 0;
+                & + .carte__titre--icon-full {
+                        opacity: 1;   
+                }
+             }
+    
+            &-full {
+                position: absolute;
+                right: 40px;
+                top: 46px;
+                opacity: 0;
+                font-size: 1.5em;
+                color: $color-primaire;
+                transition: opacity 250ms;
+            }
         }
     }
 
@@ -62,6 +81,13 @@
         display: flex;
         flex-direction: column;
         cursor: pointer;
+  
+        @for $i from 1 to 10 {
+            &--#{$i} {
+                @include animation-aparition($delay);    
+            }
+            $delay: $delay + 300ms;
+        }
 
         &--name {
             font-weight: 600;
@@ -91,6 +117,19 @@
         height: 45px;
         background-color: $color-grey;
         position: absolute;
-        bottom: -45px;   
+        bottom: -45px;
+    }
+}
+
+@keyframes aparition {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    40%, 100% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
     }
 }

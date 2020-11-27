@@ -204,22 +204,38 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -ms-flex-line-pack: center;
       align-content: center;
   padding: 35px 15px 0 15px;
   width: 100%;
+  position: relative;
 }
 
 .carte__titre--icon {
+  position: absolute;
   font-size: 1.5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
+  right: 40px;
+  top: 46px;
+  z-index: 99;
+}
+
+.carte__titre--icon:hover {
+  opacity: 0;
+}
+
+.carte__titre--icon:hover + .carte__titre--icon-full {
+  opacity: 1;
+}
+
+.carte__titre--icon-full {
+  position: absolute;
+  right: 40px;
+  top: 46px;
+  opacity: 0;
+  font-size: 1.5em;
+  color: #9356DC;
+  -webkit-transition: opacity 250ms;
+  transition: opacity 250ms;
 }
 
 .carte__item {
@@ -271,6 +287,51 @@ header {
   cursor: pointer;
 }
 
+.carte__cards--1 {
+  -webkit-animation: aparition 1000ms ease-in-out 300ms both;
+          animation: aparition 1000ms ease-in-out 300ms both;
+}
+
+.carte__cards--2 {
+  -webkit-animation: aparition 1000ms ease-in-out 600ms both;
+          animation: aparition 1000ms ease-in-out 600ms both;
+}
+
+.carte__cards--3 {
+  -webkit-animation: aparition 1000ms ease-in-out 900ms both;
+          animation: aparition 1000ms ease-in-out 900ms both;
+}
+
+.carte__cards--4 {
+  -webkit-animation: aparition 1000ms ease-in-out 1200ms both;
+          animation: aparition 1000ms ease-in-out 1200ms both;
+}
+
+.carte__cards--5 {
+  -webkit-animation: aparition 1000ms ease-in-out 1500ms both;
+          animation: aparition 1000ms ease-in-out 1500ms both;
+}
+
+.carte__cards--6 {
+  -webkit-animation: aparition 1000ms ease-in-out 1800ms both;
+          animation: aparition 1000ms ease-in-out 1800ms both;
+}
+
+.carte__cards--7 {
+  -webkit-animation: aparition 1000ms ease-in-out 2100ms both;
+          animation: aparition 1000ms ease-in-out 2100ms both;
+}
+
+.carte__cards--8 {
+  -webkit-animation: aparition 1000ms ease-in-out 2400ms both;
+          animation: aparition 1000ms ease-in-out 2400ms both;
+}
+
+.carte__cards--9 {
+  -webkit-animation: aparition 1000ms ease-in-out 2700ms both;
+          animation: aparition 1000ms ease-in-out 2700ms both;
+}
+
 .carte__cards--name {
   font-weight: 600;
   margin-bottom: 5px;
@@ -306,6 +367,36 @@ header {
   background-color: #F2F2F2;
   position: absolute;
   bottom: -45px;
+}
+
+@-webkit-keyframes aparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  40%, 100% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes aparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  40%, 100% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
 
 footer {
