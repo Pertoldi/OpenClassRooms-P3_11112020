@@ -1,0 +1,3 @@
+@mixin animation-aparition($delay: 300ms) {
+    animation: aparition 1000ms ease-in-out $delay both;
+}
