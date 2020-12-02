@@ -88,7 +88,7 @@ li {
   width: 60px;
   margin: -30px 0 0 -30px;
   border-radius: 50%;
-  border-top: 2px solid coral;
+  border-top: 2px solid #FF79DA;
   border-right: 2px solid transparent;
   z-index: 99;
   opacity: 1;
@@ -217,14 +217,19 @@ header {
   right: 40px;
   top: 46px;
   z-index: 99;
+  cursor: pointer;
 }
 
 .carte__titre--icon:hover {
   opacity: 0;
+  -webkit-transition: opacity 250ms ease-in;
+  transition: opacity 250ms ease-in;
 }
 
 .carte__titre--icon:hover + .carte__titre--icon-full {
   opacity: 1;
+  -webkit-transition: opacity 250ms ease-in;
+  transition: opacity 250ms ease-in;
 }
 
 .carte__titre--icon-full {
@@ -233,9 +238,13 @@ header {
   top: 46px;
   opacity: 0;
   font-size: 1.5em;
-  color: #9356DC;
-  -webkit-transition: opacity 250ms;
-  transition: opacity 250ms;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-transition: opacity 250ms ease-in;
+  transition: opacity 250ms ease-in;
 }
 
 .carte__item {
@@ -270,74 +279,88 @@ header {
   margin-top: 5px;
 }
 
-.carte__cards {
+.carte__box {
   background-color: #FFF;
   margin-bottom: 10px;
   border-radius: 15px;
-  padding: 10px 8px 10px 8px;
   -webkit-box-shadow: 0px 3px 3px #d9d9d9;
           box-shadow: 0px 3px 3px #d9d9d9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   cursor: pointer;
+  overflow: hidden;
 }
 
-.carte__cards--1 {
+.carte__box--1 {
   -webkit-animation: aparition 1000ms ease-in-out 300ms both;
           animation: aparition 1000ms ease-in-out 300ms both;
 }
 
-.carte__cards--2 {
+.carte__box--2 {
   -webkit-animation: aparition 1000ms ease-in-out 600ms both;
           animation: aparition 1000ms ease-in-out 600ms both;
 }
 
-.carte__cards--3 {
+.carte__box--3 {
   -webkit-animation: aparition 1000ms ease-in-out 900ms both;
           animation: aparition 1000ms ease-in-out 900ms both;
 }
 
-.carte__cards--4 {
+.carte__box--4 {
   -webkit-animation: aparition 1000ms ease-in-out 1200ms both;
           animation: aparition 1000ms ease-in-out 1200ms both;
 }
 
-.carte__cards--5 {
+.carte__box--5 {
   -webkit-animation: aparition 1000ms ease-in-out 1500ms both;
           animation: aparition 1000ms ease-in-out 1500ms both;
 }
 
-.carte__cards--6 {
+.carte__box--6 {
   -webkit-animation: aparition 1000ms ease-in-out 1800ms both;
           animation: aparition 1000ms ease-in-out 1800ms both;
 }
 
-.carte__cards--7 {
+.carte__box--7 {
   -webkit-animation: aparition 1000ms ease-in-out 2100ms both;
           animation: aparition 1000ms ease-in-out 2100ms both;
 }
 
-.carte__cards--8 {
+.carte__box--8 {
   -webkit-animation: aparition 1000ms ease-in-out 2400ms both;
           animation: aparition 1000ms ease-in-out 2400ms both;
 }
 
-.carte__cards--9 {
+.carte__box--9 {
   -webkit-animation: aparition 1000ms ease-in-out 2700ms both;
           animation: aparition 1000ms ease-in-out 2700ms both;
 }
 
-.carte__cards--name {
-  font-weight: 600;
-  margin-bottom: 5px;
+.carte__box_cards {
+  width: 100%;
+  height: 60px;
+  -webkit-transition: width 700ms ease;
+  transition: width 700ms ease;
 }
 
-.carte__cards div {
+.carte__box_cards--name {
+  display: block;
+  font-weight: 600;
+  padding: 8px 5px 5px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carte__box_cards div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -349,8 +372,59 @@ header {
   font-size: .9em;
 }
 
-.carte__cards--price {
+.carte__box_cards--txt {
+  display: block;
+  padding: 0 10px 8px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carte__box_cards--price {
   font-weight: 500;
+  margin-right: 8px;
+}
+
+.carte__box--anim {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 0px;
+  height: 60px;
+  background-color: #99E2D0;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: width 700ms ease;
+  transition: width 700ms ease;
+  overflow: hidden;
+}
+
+.carte__box--anim-checkcircle {
+  font-size: 1.2em;
+  color: #FFF;
+}
+
+.carte__box:hover > .carte__box_cards {
+  width: calc(100% - 60px);
+  -webkit-transition: width 700ms ease;
+  transition: width 700ms ease;
+}
+
+.carte__box:hover > .carte__box--anim {
+  width: 60px;
+  -webkit-transition: width 700ms ease;
+  transition: width 700ms ease;
+}
+
+.carte__box:hover .carte__box--anim-checkcircle {
+  -webkit-animation: checkmark-circle 700ms ease both;
+          animation: checkmark-circle 700ms ease both;
 }
 
 .carte__btn {
@@ -396,6 +470,20 @@ header {
   100% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes checkmark-circle {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes checkmark-circle {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -752,7 +840,11 @@ li i {
   font-weight: 300;
   left: 85%;
   bottom: 25px;
-  color: #9356DC;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   -webkit-transition: opacity 250ms;
   transition: opacity 250ms;
 }

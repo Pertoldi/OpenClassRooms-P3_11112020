@@ -28,11 +28,14 @@
             right: 40px;
             top: 46px;
             z-index: 99;
+            cursor: pointer;
 
             &:hover {
                 opacity: 0;
+                transition: opacity 250ms ease-in;
                 & + .carte__titre--icon-full {
-                        opacity: 1;   
+                        opacity: 1;
+                        transition: opacity 250ms ease-in;
                 }
              }
     
@@ -42,8 +45,11 @@
                 top: 46px;
                 opacity: 0;
                 font-size: 1.5em;
-                color: $color-primaire;
-                transition: opacity 250ms;
+                background: linear-gradient($color-primaire,$color-secondaire);
+                background-clip: text;
+                -webkit-text-fill-color:transparent;
+                -webkit-background-clip: text;
+                transition: opacity 250ms ease-in;
             }
         }
     }
@@ -72,37 +78,90 @@
         }
     }
 
-    &__cards {
+    &__box {
         background-color: #FFF;
         margin-bottom: 10px;
         border-radius: 15px;
-        padding: 10px 8px 10px 8px;
         box-shadow: 0px 3px 3px darken($color-grey, 10%);
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         cursor: pointer;
-  
-        @for $i from 1 to 10 {
+        overflow: hidden;
+
+         // Cet boucle est là pour l'apparition des cards au chargement
+         @for $i from 1 to 10 {
             &--#{$i} {
                 @include animation-aparition($delay);    
             }
             $delay: $delay + 300ms;
         }
 
-        &--name {
-            font-weight: 600;
-            margin-bottom: 5px;
+        &_cards{
+            width: 100%;
+            height: 60px;
+            transition: width 700ms ease;
+            
+            &--name {
+                display: block;
+                font-weight: 600;
+                padding: 8px 5px 5px 8px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            div {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                font-size: .9em;
+            }
+    
+            &--txt {
+                display: block;
+                padding: 0 10px 8px 8px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            &--price {
+                font-weight: 500;
+                margin-right: 8px;
+            }
         }
 
-        div {
+        &--anim {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: nowrap;
-            font-size: .9em;
+            justify-content: center;
+            align-items: center;
+            
+            width: 0px;
+            height: 60px;
+            background-color: $color-terciaire;
+            transform-origin: right;
+            transition: width 700ms ease;
+            overflow: hidden;
+            
+            &-checkcircle {
+                font-size: 1.2em;
+                color: #FFF;
+            }
         }
 
-        &--price {
-            font-weight: 500;
+        &:hover {
+            > .carte__box_cards {
+                width: calc(100% - 60px);
+                transition: width 700ms ease;
+            }
+            > .carte__box--anim {
+                width: 60px;
+                transition: width 700ms ease;
+            }
+            .carte__box--anim-checkcircle {
+                animation: checkmark-circle 700ms ease both;
+            }
         }
     }
 
@@ -111,6 +170,7 @@
         align-self: center;
     }
 
+    // Ce speudo-element sert à cacher la zone blanche créer par le superpositionnement de carte
     &::after {
         content: "";
         width: 100%;
@@ -131,5 +191,11 @@
     }
     100% {
         transform: translateY(0px);
+    }
+}
+
+@keyframes checkmark-circle {
+    100%{
+        transform: rotate(360deg);
     }
 }
