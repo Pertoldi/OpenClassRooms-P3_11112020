@@ -90,6 +90,7 @@
             bottom: 25px;
             background: linear-gradient($color-primaire,$color-secondaire);
             background-clip: text;
+            color: transparent;
             -webkit-text-fill-color:transparent;
             -webkit-background-clip: text;
             transition: opacity 250ms;
